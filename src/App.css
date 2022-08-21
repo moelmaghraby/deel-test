@@ -1,38 +1,69 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  width: 100vw;
+  height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.auto-complete {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.auto-complete__input {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  box-shadow: none;
+  outline: none;
+  border: 2px solid lightgray;
+  width: 250px;
+  color: darkgray;
+}
+
+.auto-complete__input:focus {
+  border-color: darkgray;
+}
+
+.auto-complete__list {
+  height: 200px;
+  width: 250px;
+  overflow: auto;
+  padding: 0;
+  border: 2px solid lightgray;
+  border-radius: 0.5rem;
+  position: absolute;
+  top: 50px;
+}
+
+.auto-complete__list li {
+  padding: 1rem;
+  font-size: 1rem;
+  color: darkgray;
+}
+
+.auto-complete__item {
+  cursor: pointer;
+}
+
+.auto-complete__item:hover {
+  background-color: rgb(243, 243, 243);
+}
+
+.auto-complete__list li mark {
+  color: rgb(75, 74, 74);
+  background-color: lightblue;
+}
+
+
+
+.auto-complete__list::-webkit-scrollbar {
+  width: 8px;
+  background-color: #F5F5F5;
+}
+
+.auto-complete__list::-webkit-scrollbar-thumb {
+  background-color: darkgray;
 }
